@@ -1,16 +1,27 @@
 function snapCrackle(maxValue) {
-    for (let index = 1; index <= maxValue; index++) {
-        let element = ""
-        if (element % 2 !== 0 && element % 5 == 0) {
-            element += "SnapCrackle"
-        } else if (index % 2 !== 0) {
-            element +="Snap"
-        } else if (index % 5 == 0) {
-            element += "Crackle"
+    let res = ''
+    for (let i = 0; i < maxValue; i++) {    
+        if ((Number.isInteger(i % 5) === true) && i % 2 !== 0) {
+            res = res + 'SnapCrackle, '
+        } else if (i % 2 !== 0) {
+            res = res + 'Snap, '
+        } else if (Number.isInteger(i % 5) == true) {
+            res = res + 'Crackle, '
         } else {
-            element += index
+            res = res + i + ', '
         }
     }
-    return element
+
+    if (i = maxValue) {    
+        if ((Number.isInteger(i % 5) === true) && i % 2 !== 0) {
+            res = res + 'SnapCrackle.'
+        } else if (i % 2 !== 0) {
+            res = res + 'Snap.'
+        } else if (Number.isInteger(i % 5) == true) {
+            res = res + 'Crackle.'
+        } else {
+            res = res + i + '.'
+        }
+    }
+    return res
 }
-snapCrackle(12)
