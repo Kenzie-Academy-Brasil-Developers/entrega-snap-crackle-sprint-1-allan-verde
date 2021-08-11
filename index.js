@@ -12,18 +12,16 @@ function snapCrackle(maxValue) {
         }
         if (i < maxValue) {
             res += ', '
-        } else {
-            res += '.'
-            break
         }
     }
 return res
 }
-// ----------------------------------------------------------
+
 function snapCracklePrime(maxValue) {
     let res = ''
-    let ehPrimo = true
+    let ehPrimo
     for (let i = 1; i <= maxValue; i++) {
+        ehPrimo = true
         if (i % 2 !== 0) {
             res += 'Snap'
         } 
@@ -38,7 +36,7 @@ function snapCracklePrime(maxValue) {
             }
         }
 
-        if (ehPrimo === true) {
+        if (ehPrimo === true && i !== 1) {
             res += 'Prime'
         }
 
@@ -48,10 +46,12 @@ function snapCracklePrime(maxValue) {
 
         if (i < maxValue) {
             res += ', '
-        } else {
-            res += '.'
-            break
         }
     }
 return res
 }
+
+/*
+* Pegaaaaaa!
+* Consegui!!!
+*/
